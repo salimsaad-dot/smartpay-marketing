@@ -5,10 +5,24 @@
    report as false even with a mouse. Plain &:hover keeps hover working. */
 @custom-variant hover (&:hover);
 
+/* dark: follows the visitor's choice from the theme toggle (data-theme on
+   <html>), and falls back to the device setting when they haven't chosen. */
+@custom-variant dark {
+  &:where([data-theme="dark"], [data-theme="dark"] *) {
+    @slot;
+  }
+  @media (prefers-color-scheme: dark) {
+    &:where(:root:not([data-theme="light"]), :root:not([data-theme="light"]) *) {
+      @slot;
+    }
+  }
+}
+
 /* SmartPay's own palette, taken from the app (smartpay-frontend
    globals.css): navy ink, blue for action, green for money that has
    arrived. Green is reserved for "paid" moments so it keeps its meaning. */
 :root {
+  color-scheme: light;
   --paper: #F8FAFC;
   --card: #FFFFFF;
   --ink: #0F172A;
@@ -28,7 +42,8 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
     --paper: #0B1120;
     --card: #131C2E;
     --ink: #F1F5F9;
@@ -46,6 +61,26 @@
     --shadow: 0 1px 2px rgba(0, 0, 0, 0.25), 0 8px 24px rgba(0, 0, 0, 0.35);
     --shadow-lift: 0 8px 20px rgba(0, 0, 0, 0.35), 0 24px 48px rgba(0, 0, 0, 0.45);
   }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #0B1120;
+  --card: #131C2E;
+  --ink: #F1F5F9;
+  --slate: #A3B1C6;
+  --slate-quiet: #7C8BA1;
+  --border: #253148;
+  --blue: #60A5FA;
+  --blue-deep: #3B82F6;
+  --blue-wash: rgba(96, 165, 250, 0.12);
+  --green: #34D399;
+  --green-bright: #34D399;
+  --green-wash: rgba(52, 211, 153, 0.12);
+  --amber: #FBBF24;
+  --amber-wash: rgba(251, 191, 36, 0.12);
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.25), 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-lift: 0 8px 20px rgba(0, 0, 0, 0.35), 0 24px 48px rgba(0, 0, 0, 0.45);
 }
 
 @theme inline {
@@ -87,23 +122,7 @@ body {
 }
 .fade-up { animation: fade-up 500ms cubic-bezier(0.22, 1, 0.36, 1) both; }
 
-/* Hero phone: the SMS lands, the checkout appears, then "Paid". One pass
-   on load, then it rests on the final state; no endless loop competing
-   with the headline. */
-@keyframes sms-in {
-  from { opacity: 0; transform: translateY(10px) scale(0.97); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
-}
-@keyframes paid-in {
-  0% { opacity: 0; transform: scale(0.9); }
-  60% { opacity: 1; transform: scale(1.04); }
-  100% { opacity: 1; transform: scale(1); }
-}
-.phone-step-1 { animation: sms-in 450ms cubic-bezier(0.22, 1, 0.36, 1) 400ms both; }
-.phone-step-2 { animation: sms-in 450ms cubic-bezier(0.22, 1, 0.36, 1) 1300ms both; }
-.phone-step-3 { animation: paid-in 500ms cubic-bezier(0.22, 1, 0.36, 1) 2300ms both; }
-
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .fade-up, .phone-step-1, .phone-step-2, .phone-step-3 { animation: none; }
+  .fade-up { animation: none; }
 }

@@ -1,4 +1,4 @@
-import PhoneDemo from "./PhoneDemo";
+import HeroVideo from "./HeroVideo";
 import { ArrowRightIcon, CheckIcon, WhatsAppIcon } from "./icons";
 import { whatsappLink } from "@/lib/site";
 
@@ -11,13 +11,13 @@ export default function Hero() {
         aria-hidden="true"
         className="absolute inset-0 -z-10 bg-[radial-gradient(60rem_30rem_at_85%_-10%,var(--blue-wash),transparent_70%)]"
       />
-      <div className="mx-auto grid max-w-6xl items-center gap-14 px-4 pb-20 pt-14 sm:px-8 sm:pt-20 lg:grid-cols-[1.15fr_1fr] lg:gap-10 lg:pb-28">
+      <div className="mx-auto grid max-w-6xl items-center gap-14 px-4 pb-20 pt-14 sm:px-8 sm:pt-20 lg:grid-cols-[1fr_1.1fr] lg:gap-12 lg:pb-28">
         <div className="fade-up">
           <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-semibold text-slate shadow-sm">
             <span className="h-1.5 w-1.5 rounded-full bg-green-bright" />
             Built for schools in Ghana
           </span>
-          <h1 className="mt-5 text-balance font-display text-[2.6rem] font-bold leading-[1.05] tracking-tight text-ink sm:text-6xl">
+          <h1 className="mt-5 text-balance font-display text-[2.6rem] font-bold leading-[1.05] tracking-tight text-ink sm:text-6xl lg:text-[3.25rem]">
             School fees, paid straight from a text message.
           </h1>
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate">
@@ -52,7 +52,9 @@ export default function Hero() {
           </ul>
         </div>
 
-        <PhoneDemo />
+        <div className="fade-up [animation-delay:120ms]">
+          <HeroVideo />
+        </div>
       </div>
     </section>
   );

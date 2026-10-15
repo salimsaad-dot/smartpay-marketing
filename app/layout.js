@@ -1,5 +1,6 @@
 import { Bricolage_Grotesque, Geist } from "next/font/google";
 import "./globals.css";
+import { THEME_INIT_SCRIPT } from "@/components/ThemeToggle";
 
 const bricolage = Bricolage_Grotesque({
   variable: "--font-bricolage",
@@ -24,7 +25,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${bricolage.variable} ${geist.variable} antialiased`}>
+    // suppressHydrationWarning: THEME_INIT_SCRIPT may set data-theme on
+    // <html> before React hydrates, which is intended.
+    <html lang="en" className={`${bricolage.variable} ${geist.variable} antialiased`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
+      </head>
       <body className="min-h-screen font-sans">{children}</body>
     </html>
   );

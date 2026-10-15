@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Logo } from "./Logo";
+import ThemeToggle from "./ThemeToggle";
 import { MenuIcon, CloseIcon } from "./icons";
 import { APP_LOGIN_URL } from "@/lib/site";
 
@@ -29,7 +30,8 @@ export default function Navbar() {
           ))}
         </div>
 
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex items-center gap-1 sm:gap-2">
+          <ThemeToggle />
           <a href={APP_LOGIN_URL} className="hidden px-2 text-sm font-medium text-slate transition-colors hover:text-ink sm:block">
             Log in
           </a>
