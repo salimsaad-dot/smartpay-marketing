@@ -24,20 +24,20 @@ export function Problem() {
     <section className="border-y border-border bg-card py-16 sm:py-20">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-8 lg:grid-cols-2 lg:items-center">
         <Reveal>
-          <p className="text-sm font-semibold uppercase tracking-wider text-amber">Why SmartPay exists</p>
+          <p className="text-sm font-semibold uppercase tracking-wider text-amber">Why SmartPay</p>
           <h2 className="mt-3 text-balance font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-            Parents don&rsquo;t want another account. They want to pay and get on with their day.
+            Chasing school fees shouldn&rsquo;t take up the whole term.
           </h2>
         </Reveal>
         <Reveal delay={80} className="space-y-4 text-lg leading-relaxed text-slate">
           <p>
-            SmartPay started with a headmaster who had already tried a school management system and
-            given it up. The features were fine. The problem was that parents had to create an
-            account and find their way around a portal just to pay fees, and most never did.
+            In many schools, fees still run on printed bills, phone calls to parents and a notebook of
+            who has paid. It eats into the bursar&rsquo;s week, and balances slip through the cracks.
           </p>
           <p>
-            So SmartPay works the other way round. The parent never logs in to anything. The reminder
-            comes to their phone, the link opens a simple payment page, and that&rsquo;s the whole job.
+            SmartPay takes that one job and makes it simple. Parents get a text with exactly what they
+            owe and pay from their phone, with nothing to install or sign up for. The school sees every
+            payment in one place, and reminders go out without anyone having to chase.
           </p>
         </Reveal>
       </div>
@@ -160,7 +160,7 @@ export function Features() {
         <SectionHeading
           eyebrow="For your school office"
           title="Everything the bursar needs. Nothing parents have to learn."
-          intro="SmartPay does one job: collecting school fees. It isn't a full management system, so setup takes hours, not a term."
+          intro="SmartPay focuses on one job, collecting school fees, so it's quick to set up and easy for the office to learn."
         />
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {FEATURES.map(({ title, copy, Icon }, i) => (
@@ -234,7 +234,7 @@ const FAQS = [
   },
   {
     q: "Is it a full school management system?",
-    a: "No, and that's deliberate. SmartPay only handles fees: billing, payments, reminders and reports. It's quick to set up and doesn't ask your staff or parents to change how they work.",
+    a: "No. SmartPay focuses on fees: billing, payments, reminders and reports. If your school would also like attendance, grades and report cards, ask us about Academia Hub, our full school management system.",
   },
 ];
 

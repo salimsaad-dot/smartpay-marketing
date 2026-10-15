@@ -6,8 +6,8 @@ import { whatsappLink } from "@/lib/site";
 // SmartPay handles a school's fee money and parents' phone numbers, and a
 // headteacher deciding whether to use it should see there's a real,
 // reachable person behind it. Same idea as Academia Hub's FounderSection
-// (same photo), with its own text so it doesn't repeat the "Why SmartPay
-// exists" section above. Pilot schools aren't named without their consent.
+// (same photo), with its own text so it doesn't repeat the "Why SmartPay"
+// section above. Pilot schools aren't named without their consent.
 export default function Founder() {
   return (
     <section id="about" className="py-20 sm:py-28">
@@ -23,13 +23,12 @@ export default function Founder() {
               A real person you can call.
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-slate">
-              I&rsquo;m Saad, and I build SmartPay here in Ghana. I started it after sitting with a
-              headteacher who had given up on a school system because parents couldn&rsquo;t use it to
-              pay fees. SmartPay is my answer: something parents can use from a text message, and
-              something a school office can run without training days.
+              I&rsquo;m Saad, and I built SmartPay here in Ghana for schools that want one thing done
+              well: collecting fees without the chasing. Parents pay from a text message, and the school
+              office sees every payment in one place, with nothing complicated to learn.
             </p>
             <p className="mt-4 text-lg leading-relaxed text-slate">
-              It&rsquo;s already running at schools in Ghana, and I work with each one directly. When you
+              It&rsquo;s already running at schools, and I work with each one directly. When you
               message SmartPay, you reach me, not a call centre. If something isn&rsquo;t working for
               your school, I want to hear about it.
             </p>
