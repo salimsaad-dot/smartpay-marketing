@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import { Problem, HowItWorks, PaymentOptions, Features, Trust, Faq } from "@/components/Sections";
 import { Contact, Footer } from "@/components/Contact";
+import Founder from "@/components/Founder";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <PaymentOptions />
         <Features />
         <Trust />
+        <Founder />
         <Faq />
         <Contact />
       </main>

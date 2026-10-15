@@ -64,6 +64,7 @@ export function Footer() {
           <a href="#how-it-works" className="px-2 py-3 hover:text-ink">How it works</a>
           <a href="#features" className="px-2 py-3 hover:text-ink">Features</a>
           <a href="#faq" className="px-2 py-3 hover:text-ink">FAQ</a>
+          <a href="#about" className="px-2 py-3 hover:text-ink">About</a>
           <a href={APP_LOGIN_URL} className="px-2 py-3 hover:text-ink">Log in</a>
         </div>
         <p className="text-sm text-slate-quiet">&copy; {new Date().getFullYear()} SmartPay</p>
